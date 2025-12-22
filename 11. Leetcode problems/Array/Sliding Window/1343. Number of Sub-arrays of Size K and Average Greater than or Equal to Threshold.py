@@ -22,6 +22,7 @@
 # 0 <= threshold <= 104
 
 
+# Sliding Window Approach
 
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
