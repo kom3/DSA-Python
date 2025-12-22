@@ -1,7 +1,5 @@
 # Problem: Maximum sum of subarray of size k
 
-# ---------------------------------------------------------------------------------
-
 
 # 1. Brute Force Approach(Understand with an example dry run)
 
