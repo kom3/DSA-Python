@@ -1,6 +1,6 @@
-🔹 Sliding Window Technique (From Zero → FAANG)
+### 🔹 Sliding Window Technique (From Zero → FAANG)
 
-1️⃣ Why Sliding Window Exists (Very Important)
+#### 1️⃣ Why Sliding Window Exists (Very Important)
 
 The problem it solves
 
@@ -16,53 +16,50 @@ Examples:
 
 - ##### Smallest subarray with sum ≥ X
 
-Naive (Brute Force) Thinking
+#### Naive (Brute Force) Thinking
 
 For every possible subarray:
-
-Calculate its sum / count / condition
-
-Time complexity: O(n²) ❌ (too slow for FAANG)
-
+- Calculate its sum / count / condition
+    
+- Time complexity: O(n²) ❌ (too slow for FAANG)
+    
 👉 Sliding Window reduces this to O(n)
 
-2️⃣ What Is a Sliding Window?
+#### 2️⃣ What Is a Sliding Window?
 
 Imagine a window (range) that moves over the array:
 
-[ 2  1  5  1  3  2 ]
-  ↑     ↑
- left  right
+![alt text](image.png)
 
 
 Instead of recomputing everything:
 
-Add the new element entering the window
+- Add the new element entering the window
 
-Remove the element leaving the window
+- Remove the element leaving the window
 
 This saves time.
 
-3️⃣ Two Types of Sliding Window (MUST KNOW)
-🔹 Type 1: Fixed Size Window
+#### 3️⃣ Two Types of Sliding Window (MUST KNOW)
+##### 🔹 Type 1: Fixed Size Window
 
 Window size is constant (k)
 
 Examples:
 
-Maximum sum of subarray of size k
+-  Maximum sum of subarray of size k
 
-Average of subarrays of size k
+-  Average of subarrays of size k
 
-🔹 Type 2: Variable Size Window
+##### 🔹 Type 2: Variable Size Window
 
 Window expands and shrinks based on conditions
 
 Examples:
 
-- ##### Longest substring without repeating characters
+-  Longest substring without repeating characters
 
-- ##### Smallest subarray with sum ≥ target
+-  Smallest subarray with sum ≥ target
 
 4️⃣ Fixed Size Sliding Window (FOUNDATION)
 Example Problem
@@ -186,18 +183,18 @@ Common Questions
 9️⃣ Practice Problems (In Order)
 ### Beginner
 
-Maximum sum subarray of size k
+- ##### Maximum sum subarray of size k
 
-Average of subarrays of size k
+- ##### Average of subarrays of size k
 
 ### Intermediate
 
-Longest substring without repeating characters
+- ##### Longest substring without repeating characters
 
-Longest subarray with sum ≤ k
+- ##### Longest subarray with sum ≤ k
 
 ### Advanced (FAANG)
 
-Minimum Window Substring
+- ##### Minimum Window Substring
 
-Subarrays with exactly K distinct integers
+- ##### Subarrays with exactly K distinct integers
