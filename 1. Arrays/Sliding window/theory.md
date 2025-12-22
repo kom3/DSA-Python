@@ -1,136 +1,162 @@
-### 🔹 Sliding Window Technique (From Zero → FAANG)
+# 🔹 Sliding Window Technique (From Zero → FAANG)
 
-#### 1️⃣ Why Sliding Window Exists (Very Important)
+## 1️⃣ Why Sliding Window Exists (Very Important)
 
-The problem it solves
+### The problem it solves
 
 Many problems ask:
 
-    “Find something contiguous in an array or string”
+> “Find something **contiguous** in an array or string”
 
 Examples:
 
-- ##### Maximum sum subarray of size k
+* Maximum sum subarray of size `k`
+* Longest substring without repeating characters
+* Smallest subarray with sum ≥ `X`
 
-- ##### Longest substring without repeating characters
-
-- ##### Smallest subarray with sum ≥ X
-
-#### Naive (Brute Force) Thinking
+### Naive (Brute Force) Thinking
 
 For every possible subarray:
-- Calculate its sum / count / condition
-    
-- Time complexity: O(n²) ❌ (too slow for FAANG)
-    
-👉 Sliding Window reduces this to O(n)
 
-#### 2️⃣ What Is a Sliding Window?
+* Calculate its sum / count / condition
+* Time complexity: **O(n²)** ❌ (too slow for FAANG)
 
-Imagine a window (range) that moves over the array:
+👉 **Sliding Window reduces this to O(n)**
 
-![alt text](image.png)
+---
 
+## 2️⃣ What Is a Sliding Window?
+
+Imagine a **window** (range) that moves over the array:
+
+```
+[ 2  1  5  1  3  2 ]
+  ↑     ↑
+ left  right
+```
 
 Instead of recomputing everything:
 
-- Add the new element entering the window
-
-- Remove the element leaving the window
+* **Add** the new element entering the window
+* **Remove** the element leaving the window
 
 This saves time.
 
-#### 3️⃣ Two Types of Sliding Window (MUST KNOW)
-##### 🔹 Type 1: Fixed Size Window
+---
 
-Window size is constant (k)
+## 3️⃣ Two Types of Sliding Window (MUST KNOW)
+
+### 🔹 Type 1: Fixed Size Window
+
+Window size is constant (`k`)
 
 Examples:
 
--  Maximum sum of subarray of size k
+* Maximum sum of subarray of size `k`
+* Average of subarrays of size `k`
 
--  Average of subarrays of size k
-
-##### 🔹 Type 2: Variable Size Window
+### 🔹 Type 2: Variable Size Window
 
 Window expands and shrinks based on conditions
 
 Examples:
 
--  Longest substring without repeating characters
+* Longest substring without repeating characters
+* Smallest subarray with sum ≥ target
 
--  Smallest subarray with sum ≥ target
+---
 
-4️⃣ Fixed Size Sliding Window (FOUNDATION)
-Example Problem
+## 4️⃣ Fixed Size Sliding Window (FOUNDATION)
 
-- ##### Maximum sum of subarray of size k
+### Example Problem
 
-        Input:
-        nums = [2, 1, 5, 1, 3, 2]
-        k = 3
+**Maximum sum of subarray of size `k`**
 
-        Brute Force ❌
+#### Input:
 
-        Check all subarrays of size 3 → O(nk)
+```
+nums = [2, 1, 5, 1, 3, 2]
+k = 3
+```
 
-        Optimal Sliding Window ✅
-        Intuition
+#### Brute Force ❌
 
-#### Calculate sum of first k elements
+Check all subarrays of size 3 → O(nk)
 
-Slide window:
+---
 
-- Add next element
+### Optimal Sliding Window ✅
 
-- Remove previous element
+#### Intuition
 
-✅ Code (Python)
+1. Calculate sum of first `k` elements
+2. Slide window:
 
-    def max_sum_subarray(nums, k):
-        window_sum = 0
-        max_sum = 0
+   * Add next element
+   * Remove previous element
 
-        for i in range(len(nums)):
-            window_sum += nums[i]     # add element
+---
 
-            if i >= k - 1:
-                max_sum = max(max_sum, window_sum)
-                window_sum -= nums[i - (k - 1)]  # remove element
+### ✅ Code (Python)
+
+```python
+def max_sum_subarray(nums, k):
+    window_sum = 0
+    max_sum = 0
+
+    for i in range(len(nums)):
+        window_sum += nums[i]     # add element
+
+        if i >= k - 1:
+            max_sum = max(max_sum, window_sum)
+            window_sum -= nums[i - (k - 1)]  # remove element
 
     return max_sum
+```
 
-⏱ Time & Space
+---
 
-    Time: O(n)
+### ⏱ Time & Space
 
-    Space: O(1)
+* Time: **O(n)**
+* Space: **O(1)**
 
-5️⃣ Variable Size Sliding Window (FAANG FAVORITE)
-Example Problem
+---
 
-- Longest Substring Without Repeating Characters
+## 5️⃣ Variable Size Sliding Window (FAANG FAVORITE)
 
-        Input: "abcabcbb"
-        Output: 3  ("abc")
+### Example Problem
 
-#### Key Idea
+**Longest Substring Without Repeating Characters**
 
-    Expand right pointer
+```
+Input: "abcabcbb"
+Output: 3  ("abc")
+```
 
-    If condition breaks → shrink from left
+---
 
-🧠 Window Rules
-| Step    | Action         |
-|---------|----------------|
-| Expand  | Move right     |
-| Invalid | Shrink left   |
-| Valid   | Update answer  |
+### Key Idea
 
+* Expand `right` pointer
+* If condition breaks → shrink from `left`
 
-✅ Code (Python)
+---
+
+### 🧠 Window Rules
+
+| Step    | Action        |
+| ------- | ------------- |
+| Expand  | Move `right`  |
+| Invalid | Shrink `left` |
+| Valid   | Update answer |
+
+---
+
+### ✅ Code (Python)
+
+```python
 def longest_unique_substring(s):
-    
     char_set = set()
     left = 0
     max_len = 0
@@ -144,57 +170,366 @@ def longest_unique_substring(s):
         max_len = max(max_len, right - left + 1)
 
     return max_len
+```
 
-🔥 Interview Insight
+---
 
-    right - left + 1 → current window size
+### 🔥 Interview Insight
 
-Shrinking ensures condition is valid
+* `right - left + 1` → current window size
+* Shrinking ensures condition is valid
 
-6️⃣ Universal Sliding Window Template (MEMORIZE)
+---
 
-    left = 0
-    for right in range(n):
-        # expand window
-        add(nums[right])
+## 6️⃣ Universal Sliding Window Template (MEMORIZE)
 
-        while window_invalid:
-            remove(nums[left])
-            left += 1
+```python
+left = 0
 
-        update_answer()
+for right in range(n):
+    # expand window
+    add(nums[right])
 
+    while window_invalid:
+        remove(nums[left])
+        left += 1
 
-🔥 90% of sliding window problems follow this
+    update_answer()
+```
 
-7️⃣ FAANG Sliding Window Patterns
-Common Questions
-- Pattern	Example
-- Max/Min Subarray	Max sum of size k
-- Longest Window	Longest substring
-- Smallest Window	Min window substring
-- Count Windows	Number of subarrays
-8️⃣ Interview Red Flags 🚩
+🔥 **90% of sliding window problems follow this**
+
+---
+
+## 7️⃣ FAANG Sliding Window Patterns
+
+### Common Questions
+
+| Pattern          | Example              |
+| ---------------- | -------------------- |
+| Max/Min Subarray | Max sum of size k    |
+| Longest Window   | Longest substring    |
+| Smallest Window  | Min window substring |
+| Count Windows    | Number of subarrays  |
+
+---
+
+## 8️⃣ Interview Red Flags 🚩
 
 ❌ Nested loops for subarrays
 ❌ Recomputing sum every time
 ❌ Forgetting to shrink window
 
-9️⃣ Practice Problems (In Order)
+---
+
+## 9️⃣ Practice Problems (In Order)
+
 ### Beginner
 
-- ##### Maximum sum subarray of size k
-
-- ##### Average of subarrays of size k
+1. Maximum sum subarray of size k
+2. Average of subarrays of size k
 
 ### Intermediate
 
-- ##### Longest substring without repeating characters
-
-- ##### Longest subarray with sum ≤ k
+3. Longest substring without repeating characters
+4. Longest subarray with sum ≤ k
 
 ### Advanced (FAANG)
 
-- ##### Minimum Window Substring
+5. Minimum Window Substring
+6. Subarrays with exactly K distinct integers
 
-- ##### Subarrays with exactly K distinct integers
+---
+
+Excellent. This is exactly the **FAANG-track learning path** 👍
+I’ll teach this **like a real interview prep class**, step by step, with **intuions + traps + interviewer thinking**.
+
+---
+
+# 1️⃣ Prefix Sum vs Sliding Window (CRITICAL COMPARISON)
+
+Many students confuse these. FAANG interviewers **expect you to choose correctly**.
+
+---
+
+## 🔹 Prefix Sum — WHEN & WHY
+
+### What is Prefix Sum?
+
+Prefix sum stores **cumulative information**.
+
+```python
+prefix[i] = sum(nums[0] → nums[i])
+```
+
+### Why it works
+
+It allows **O(1)** range queries after **O(n)** preprocessing.
+
+---
+
+### Example Use Case
+
+👉 *“Find number of subarrays with sum = K”*
+👉 *Negative numbers allowed*
+
+❌ Sliding window FAILS here
+✅ Prefix sum + HashMap works
+
+---
+
+### Example Code
+
+```python
+def subarraySum(nums, k):
+    count = 0
+    prefix_sum = 0
+    mp = {0: 1}
+
+    for num in nums:
+        prefix_sum += num
+        if prefix_sum - k in mp:
+            count += mp[prefix_sum - k]
+        mp[prefix_sum] = mp.get(prefix_sum, 0) + 1
+
+    return count
+```
+
+---
+
+## 🔹 Sliding Window — WHEN & WHY
+
+### Works ONLY when:
+
+* Subarray is **contiguous**
+* Condition becomes valid by **shrinking window**
+* Usually **positive numbers / monotonic behavior**
+
+---
+
+### Example Use Case
+
+👉 Longest substring without repeating characters
+👉 Maximum sum subarray of size K
+
+---
+
+## 🔥 Interview Comparison Table (MEMORIZE)
+
+| Scenario                             | Use            |
+| ------------------------------------ | -------------- |
+| Fixed window size                    | Sliding Window |
+| Longest / shortest subarray          | Sliding Window |
+| Negative numbers                     | Prefix Sum     |
+| Count subarrays                      | Prefix Sum     |
+| Window condition breaks by shrinking | Sliding Window |
+
+---
+
+# 2️⃣ Sliding Window + HashMap (VERY IMPORTANT)
+
+Most **hard FAANG problems** use this combo.
+
+---
+
+## Core Idea
+
+* Window = two pointers
+* HashMap = frequency count
+
+---
+
+## Classic Problem
+
+### 🔥 Longest Substring with At Most K Distinct Characters
+
+---
+
+### Intuition
+
+* Expand `right`
+* Count chars in hashmap
+* If distinct > K → shrink from `left`
+
+---
+
+### Code
+
+```python
+def longestSubstringKDistinct(s, k):
+    left = 0
+    freq = {}
+    max_len = 0
+
+    for right in range(len(s)):
+        freq[s[right]] = freq.get(s[right], 0) + 1
+
+        while len(freq) > k:
+            freq[s[left]] -= 1
+            if freq[s[left]] == 0:
+                del freq[s[left]]
+            left += 1
+
+        max_len = max(max_len, right - left + 1)
+
+    return max_len
+```
+
+---
+
+## Interview Insight 🔍
+
+* HashMap tracks **window validity**
+* Length = `right - left + 1`
+* This pattern appears in **Google, Meta, Amazon**
+
+---
+
+# 3️⃣ HARD FAANG PROBLEM WALKTHROUGH 🔥
+
+## 🧠 Problem: Minimum Window Substring (LeetCode Hard)
+
+### Given:
+
+```
+s = "ADOBECODEBANC"
+t = "ABC"
+```
+
+### Output:
+
+```
+"BANC"
+```
+
+---
+
+## Why this is HARD
+
+* Variable window
+* Exact frequency matching
+* Shrinking window carefully
+
+---
+
+## Strategy (VERY IMPORTANT)
+
+### Data Structures:
+
+* `need` → frequency of chars in `t`
+* `window` → current window frequency
+* `formed` → matched characters count
+
+---
+
+### Code (Interview-Ready)
+
+```python
+from collections import Counter
+
+def minWindow(s, t):
+    need = Counter(t)
+    window = {}
+    have = 0
+    need_count = len(need)
+
+    left = 0
+    res = [-1, -1]
+    res_len = float("inf")
+
+    for right in range(len(s)):
+        char = s[right]
+        window[char] = window.get(char, 0) + 1
+
+        if char in need and window[char] == need[char]:
+            have += 1
+
+        while have == need_count:
+            if (right - left + 1) < res_len:
+                res = [left, right]
+                res_len = right - left + 1
+
+            window[s[left]] -= 1
+            if s[left] in need and window[s[left]] < need[s[left]]:
+                have -= 1
+            left += 1
+
+    l, r = res
+    return s[l:r+1] if res_len != float("inf") else ""
+```
+
+---
+
+## What Interviewer Is Testing
+
+✅ Can you track frequencies
+✅ Can you shrink optimally
+✅ Can you explain invariants
+
+---
+
+# 4️⃣ MOCK INTERVIEW (REALISTIC)
+
+### 🎤 Interviewer:
+
+> Solve: *Longest Substring Without Repeating Characters*
+
+---
+
+### ✅ Perfect Answer Structure
+
+#### Step 1: Clarify
+
+* String
+* Return length
+* Case sensitive?
+
+#### Step 2: Brute Force
+
+* O(n²)
+* Explain inefficiency
+
+#### Step 3: Optimal Approach
+
+* Sliding window + set
+* Two pointers
+
+#### Step 4: Code
+
+(You already know it)
+
+---
+
+### 🔥 What Gets You Selected
+
+✔ Explaining window logic
+✔ Correct shrinking condition
+✔ Clean O(n) solution
+
+---
+
+## 5️⃣ Final Sliding Window Master Template (FAANG GOLD)
+
+```python
+left = 0
+window = {}
+
+for right in range(n):
+    add(nums[right])
+
+    while condition_breaks:
+        remove(nums[left])
+        left += 1
+
+    update_answer()
+```
+
+---
+
+## 6️⃣ Your Next Level 🚀
+
+1. Drill **20 FAANG sliding window questions**
+2. **Two Pointers vs Sliding Window**
+3. **Monotonic Queue (next level window)**
+
+---
