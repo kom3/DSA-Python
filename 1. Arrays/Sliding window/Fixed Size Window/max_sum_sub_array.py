@@ -5,8 +5,6 @@
 
 # 1. Brute Force Approach(Understand with an example dry run)
 
-print("*********************** Brute Force Approach *******************************")
-
 nums = [2, 1, 5, 1, 3, 2]
 k = 3
 
@@ -30,7 +28,6 @@ print(f"Max sum of a sub-array of size {k} is {max_sum}")
 # Space complexity becomes O(1) if there is no sub_array used.
 
 # output: 
-# *********************** Brute Force Approach *******************************
 # sub array 1: [2, 1, 5]
 # sub array 2: [1, 5, 1]
 # sub array 3: [5, 1, 3]
@@ -42,8 +39,6 @@ print(f"Max sum of a sub-array of size {k} is {max_sum}")
 
 
 # 2. Optimal Sliding Window Approach
-
-print("\n\n************************* Optimal Sliding Window Approach(Fixed Window) *****************************")
 
 def max_sub_array(nums, k):
     max_sum = 0
@@ -63,7 +58,6 @@ result = max_sub_array(nums, k)
 print(f"Max sum of a sub-array of size {k} is {result}")
 
 # Output:
-# ************************* Optimal Sliding Window Approach(Fixed Window) *****************************
 # Max sum of a sub-array of size 3 is 9
 
 
