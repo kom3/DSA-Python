@@ -20,10 +20,12 @@ for i in range(len(nums) - (k-1)): #Prevent pointer going till last element, bec
 
 print(f"Max sum of a sub-array of size {k} is {max_sum}")
 
-# Time complexity: O(n * k), This only becomes O(n²) if k ≈ n, but in general interviews expect O(nk).
+# Time complexity:
+# O(n * k), This only becomes O(n²) if k ≈ n, but in general interviews expect O(nk).
 # This solution runs in O(nk) time, which is inefficient when k is large
 
-# with sub_array(used for printing purpose) Space complexity: O(n) if k ≈ n, but in general interviews expect O(k).
+# Space complexity:
+# with sub_array(used for printing purpose): O(n) if k ≈ n, but in general interviews expect O(k).
 # Space complexity becomes O(1) if there is no sub_array used.
 
 # output: 
