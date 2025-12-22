@@ -54,7 +54,7 @@ def max_sub_array(nums, k):
 
         if i >= k - 1:
             max_sum = max(max_sum, window_sum)
-            window_sum -= nums[i - k + 1] # i - (k-1)
+            window_sum -= nums[i - (k - 1)] # or (i - k + 1)
 
     return max_sum
 
