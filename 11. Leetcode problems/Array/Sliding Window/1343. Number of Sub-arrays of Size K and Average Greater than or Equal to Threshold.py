@@ -29,7 +29,7 @@ class Solution:
         window_sum = 0
         count = 0
 
-        for i in range(len(arr)):
+        for i in range(len(arr)): # carefully notice the upperbound(it's different from problem: 1984), memorize the way pointer i moves
             # add right
             window_sum += arr[i]
 
