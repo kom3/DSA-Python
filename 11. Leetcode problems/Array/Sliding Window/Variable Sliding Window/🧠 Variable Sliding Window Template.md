@@ -1,10 +1,10 @@
+```
 left = 0
 window = {}
 result = 0
 
 for right in range(len(nums)):
 
-```
     # expand window
     window[nums[right]] = window.get(nums[right], 0) + 1
 

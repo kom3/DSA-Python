@@ -1,7 +1,7 @@
+```
 window_sum = 0
 left = 0
 
-```
 for right in range(len(nums)):
     window_sum += nums[right]
 
