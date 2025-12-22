@@ -5,8 +5,8 @@
 
 nums = [2, 1, 5, 1, 3, 2]
 k = 3
-
 max_sum = 0
+
 for i in range(len(nums) - (k-1)): #Prevent pointer going till last element, because sub-array needs atleast lenght k
     current_sum = 0
     sub_array = []
@@ -14,6 +14,7 @@ for i in range(len(nums) - (k-1)): #Prevent pointer going till last element, bec
         # find sum of current sub array elements
         sub_array.append(nums[j])
         current_sum += nums[j]
+
     print(f"sub array {i+1}: { sub_array }")
     max_sum = max(max_sum, current_sum)
 
@@ -41,7 +42,6 @@ print(f"Max sum of a sub-array of size {k} is {max_sum}")
 def max_sub_array(nums, k):
     max_sum = 0
     window_sum = 0
-
     for i in range(len(nums)):
         window_sum += nums[i]
 
