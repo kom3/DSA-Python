@@ -3,6 +3,8 @@ window = {}
 result = 0
 
 for right in range(len(nums)):
+
+```
     # expand window
     window[nums[right]] = window.get(nums[right], 0) + 1
 
@@ -15,6 +17,7 @@ for right in range(len(nums)):
 
     # update result
     result = max(result, right - left + 1)
+```
 
 
 Key pattern: Expand → Check → Shrink → Update result
