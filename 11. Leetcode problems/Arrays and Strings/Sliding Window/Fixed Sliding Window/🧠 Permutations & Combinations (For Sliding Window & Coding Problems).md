@@ -277,3 +277,6 @@ Do I care about order?
 * Always ask: **Does order matter here?**
 
 ---
+![alt text](image.png)
+
+![alt text](image-1.png)
