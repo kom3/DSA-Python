@@ -55,6 +55,7 @@ class Solution:
         # sliding window
         left = 0
         for right in range(len(s1), len(s2)):
+            # Early exit: Because we just need one macth at anytime 
             if matches == 26:
                 return True
 
