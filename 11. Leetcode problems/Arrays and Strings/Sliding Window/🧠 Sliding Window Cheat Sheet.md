@@ -12,9 +12,7 @@ Here’s a **one-page sliding window cheat sheet** with all the major patterns a
 **Pattern:** Slide a window of size `k` across array/string.
 
 **Formula:**
-[
-\text{Window sum/avg} = \text{prev sum} - \text{outgoing element} + \text{incoming element}
-]
+![alt text](image.png)
 
 **Visual:**
 
