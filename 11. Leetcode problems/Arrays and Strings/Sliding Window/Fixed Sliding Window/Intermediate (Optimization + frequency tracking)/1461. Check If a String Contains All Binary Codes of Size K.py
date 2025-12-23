@@ -26,7 +26,7 @@
 # 1 <= k <= 20
 
 
-# Pattern: Fixed sliding window + set
+# Pattern: Fixed sliding window + set + Bit manipulation
 
 
 

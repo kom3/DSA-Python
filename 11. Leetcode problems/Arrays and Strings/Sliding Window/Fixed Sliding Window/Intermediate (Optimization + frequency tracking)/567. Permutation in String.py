@@ -52,6 +52,7 @@ class Solution:
             if freq1[i] == freq2[i]:
                 matches += 1
 
+        # sliding window
         left = 0
         for right in range(len(s1), len(s2)):
             if matches == 26:
