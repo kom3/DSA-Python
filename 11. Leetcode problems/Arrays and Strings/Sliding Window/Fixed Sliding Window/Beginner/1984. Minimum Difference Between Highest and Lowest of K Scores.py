@@ -69,4 +69,4 @@ print(f"Min diff is {min_diff}")
 
 
 # Hint
-# it a non continguous problem
+# It sounds like a non contiguous problem, but sorting will totally change it to contiguous(since order is not important in this problem), and sliding window only works with contiguous problems.
