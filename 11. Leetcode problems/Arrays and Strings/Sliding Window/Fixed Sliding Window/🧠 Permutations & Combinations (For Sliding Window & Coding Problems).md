@@ -280,3 +280,44 @@ Do I care about order?
 ![alt text](image.png)
 
 ![alt text](image-1.png)
+
+
+---
+
+### **Permutation** vs **Anagram**: 
+
+Yes, an **anagram is very closely related to a permutation**, but there’s a subtle difference depending on context:
+
+### **Permutation**
+
+* **Definition:** Rearranging all elements of a set in any order.
+* Can be numbers, letters, or anything.
+* Order matters.
+* Example: Permutations of `"abc"` → `"abc"`, `"acb"`, `"bac"`, `"bca"`, `"cab"`, `"cba"`
+
+---
+
+### **Anagram**
+
+* **Definition:** Rearranging the letters of a **word or string** to form another **valid word or string**.
+* Essentially, it’s a **permutation of letters** with the constraint that it uses all letters exactly once.
+* Example: `"listen"` → `"silent"` (both are valid words using all letters)
+
+---
+
+### **Key Differences**
+
+| Aspect     | Permutation                       | Anagram                                                |
+| ---------- | --------------------------------- | ------------------------------------------------------ |
+| Elements   | Can be numbers, letters, etc.     | Letters of a word/string                               |
+| Validity   | Any rearrangement counts          | Usually forms meaningful word (in dictionary problems) |
+| Constraint | Use all elements (or r at a time) | Use all letters exactly once                           |
+
+---
+
+✅ **Shortcut:**
+
+* Every anagram of a string is a **permutation of its letters**.
+* Not every permutation is an anagram, unless it forms a valid word (if you care about dictionary words).
+
+---
