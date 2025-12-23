@@ -22,7 +22,7 @@
 # -104 <= nums[i] <= 104
 
 
-# Sliding Window Approach
+# Pattern: Fixed Sliding Window + Running Sum / Average
 
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:

@@ -36,7 +36,8 @@
 
 
 
-# Sliding window approach
+# Pattern: Sort + Fixed Sliding Window (Range Minimization)
+
 
 class Solution:
     def minimumDifference(self, nums, k):

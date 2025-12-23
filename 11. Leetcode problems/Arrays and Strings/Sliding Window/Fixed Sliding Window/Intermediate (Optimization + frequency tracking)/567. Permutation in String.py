@@ -30,7 +30,7 @@
 #     Sliding Window
 
 
-# Pattern: Sliding window + Frequency Map
+# Pattern: Fixed Sliding window + Frequency Map
 
 
 class Solution:

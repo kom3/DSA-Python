@@ -22,7 +22,7 @@
 # 0 <= threshold <= 104
 
 
-# Sliding Window Approach
+# Pattern: Fixed Sliding Window + Running Sum (or Average)
 
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:

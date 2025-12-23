@@ -30,7 +30,7 @@
 # s​​​​​​ consists of lowercase English letters.
 
 
-
+# Pattern: Fixed sliding window + boolean / set for uniqueness check
 
 # Solution 1
 class Solution:

@@ -35,6 +35,9 @@
 
 
 
+# Pattern: Fixed Sliding Window + Running Count / Sum
+
+
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
         vowels = {'a', 'e', 'i', 'o', 'u'} #using set over array for faster member checkup
