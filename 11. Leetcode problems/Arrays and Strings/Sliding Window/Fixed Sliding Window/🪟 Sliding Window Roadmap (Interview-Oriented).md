@@ -172,7 +172,5 @@ Ask yourself:
 * Is it a **contiguous** subarray or substring? → Sliding window ✅
 * Can I pick elements in any order? → Sorting / combinations ❌
 
-This connects directly to **permutations vs combinations**, which you asked about earlier.
-
 ---
 
