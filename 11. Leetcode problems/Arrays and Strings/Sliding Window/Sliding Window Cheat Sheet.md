@@ -1,0 +1,144 @@
+# Sliding Window problem patterns (Memorize)
+
+
+Here’s a **one-page sliding window cheat sheet** with all the major patterns and visual examples so it’s easy to remember.
+
+---
+
+# 🟢 **Sliding Window Cheat Sheet**
+
+## **1️⃣ Fixed-Size Window**
+
+**Pattern:** Slide a window of size `k` across array/string.
+
+**Formula:**
+[
+\text{Window sum/avg} = \text{prev sum} - \text{outgoing element} + \text{incoming element}
+]
+
+**Visual:**
+
+```
+Array: [1, 3, 2, 5, 4] , k=3
+Window: [1,3,2] -> sum=6
+Slide → [3,2,5] -> sum=10
+Slide → [2,5,4] -> sum=11
+```
+
+**Use Cases:**
+
+* Max/Min in subarray of size k
+* Sum/Average of subarrays
+* Detect patterns in substrings
+
+---
+
+## **2️⃣ Dynamic-Size Window**
+
+**Pattern:** Window grows/shrinks until condition is satisfied.
+
+**Visual:**
+
+```
+Array: [2,1,5,2,3,2], target_sum ≥ 7
+
+Start: left=0, right=0, sum=0
+Add 2 → sum=2
+Add 1 → sum=3
+Add 5 → sum=8 ✅ condition met, shrink from left
+Remove 2 → sum=6 ❌ condition fails, expand right
+...
+```
+
+**Use Cases:**
+
+* Smallest subarray with sum ≥ S
+* Longest substring with ≤ K distinct chars
+* Subarray with sum divisible by k
+
+---
+
+## **3️⃣ Frequency / Count Map**
+
+**Pattern:** Maintain frequency of elements inside window.
+
+**Visual:**
+
+```
+String: "cbaebabacd", pattern="abc", k=3
+
+Window "cba" → freq={'a':1,'b':1,'c':1} ✅ matches pattern
+Slide → "bae" → freq={'b':1,'a':1,'e':1} ❌
+```
+
+**Use Cases:**
+
+* Count anagrams of a pattern
+* Substrings with exact k distinct chars
+* Sliding substring problems
+
+---
+
+## **4️⃣ Max/Min Tracking (Deque)**
+
+**Pattern:** Track max/min efficiently using deque.
+
+**Visual:**
+
+```
+Array: [1,3,-1,-3,5,3,6,7], k=3
+
+Max in each window:
+[1,3,-1] → 3
+[3,-1,-3] → 3
+[-1,-3,5] → 5
+```
+
+**Use Cases:**
+
+* Sliding window maximum/minimum
+* Monotonic queue problems
+
+---
+
+## **5️⃣ Boolean / Condition Checks**
+
+**Pattern:** Check if window meets a condition.
+
+**Examples:**
+
+* All unique characters
+* Contains all chars of a pattern
+* Sum divisible by K
+
+**Visual:**
+
+```
+Window "abca" → Not unique (a repeats)
+Window "abc" → All unique ✅
+```
+
+---
+
+## **6️⃣ Tips / Tricks**
+
+1. Decide **fixed** vs **dynamic** window.
+2. Choose data structure:
+
+   * Counter/Map → for frequency
+   * Queue/Deque → for max/min
+   * Integer → for sum/product
+3. Update window **incrementally**:
+
+   * Add new element
+   * Remove old element
+4. Collect results at each step if needed.
+
+---
+
+💡 **Memory Hook:**
+
+> “Fixed = Sum/Max, Dynamic = Condition, Map = Frequency, Deque = Extremes”
+
+---
+
