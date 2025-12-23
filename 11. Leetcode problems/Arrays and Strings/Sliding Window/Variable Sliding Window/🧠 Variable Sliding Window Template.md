@@ -1,3 +1,29 @@
+##### Master template
+
+```
+left = 0
+state = {}        # or set / count / sum / freq map
+answer = 0        # max, min, or count
+
+for right in range(len(arr)):
+    # 1️⃣ Expand window
+    add arr[right] to state
+
+    # 2️⃣ Shrink window until valid
+    while window is invalid:
+        remove arr[left] from state
+        left += 1
+
+    # 3️⃣ Update answer (window is valid here)
+    update answer using (right - left + 1)
+
+return answer
+
+```
+
+
+##### Python code version
+
 ```
 left = 0
 window = {}
@@ -20,4 +46,4 @@ for right in range(len(nums)):
 ```
 
 
-Key pattern: Expand → Check → Shrink → Update result
+__Key pattern: Expand → Check → Shrink → Update result__
