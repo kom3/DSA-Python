@@ -29,7 +29,7 @@ class Solution:
         max_sum = float(-inf)
         window_sum = 0
 
-        for i in range(len(nums)):    # carefully notice the upperbound(it's different from problem: 1984), memorize the way pointer i moves
+        for i in range(len(nums)):    # carefully notice the upperbound(it's different from problem: 1984), memorize the way pointer 'i' moves. 'i' will become a right pointer
             window_sum += nums[i]
 
             if i >= k - 1:

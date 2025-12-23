@@ -49,7 +49,7 @@ class Solution:
 
         # Sliding window of size k
         # wrapping k-1 within () for understanding purposes, we always use (k-1) to add to index to find the last(right most) element and subract the array lenght to get the ith valid window position.
-        for i in range(len(nums) - (k - 1)): # carefully notice the upperbound(it's different from problem: 1343), memorize the way pointer i moves
+        for i in range(len(nums) - (k - 1)): # carefully notice the upperbound(it's different from problem: 1343), memorize the way pointer 'i' moves. 'i' will become a left pointer
             lowest_score_in_window = nums[i]
             highest_score_in_window = nums[i + (k - 1)]
             diff = highest_score_in_window - lowest_score_in_window
