@@ -66,3 +66,7 @@ s = Solution()
 min_diff = s.minimumDifference(nums, k)
 print(f"Min diff is {min_diff}")
 # Output: Min diff is 2
+
+
+# Hint
+# it a non continguous problem

@@ -1,3 +1,8 @@
+##### Sliding window fundamentally applied to the contiguous array or strings, remember the term <mark>contiguity</mark>
+
+##### Sliding window can't be used for a subsequence problems, we use DP, Two pointers, or greedy.
+
+
 ```
 window_sum = 0
 left = 0
