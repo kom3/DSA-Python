@@ -11,7 +11,6 @@ Here’s a **one-page sliding window cheat sheet** with all the major patterns a
 
 **Pattern:** Slide a window of size `k` across array/string.
 
-**Formula:**
 ![alt text](image.png)
 
 **Visual:**
