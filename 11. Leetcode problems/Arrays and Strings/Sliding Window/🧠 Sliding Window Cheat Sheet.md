@@ -7,6 +7,34 @@ Here’s a **one-page sliding window cheat sheet** with all the major patterns a
 
 # 🟢 **Sliding Window Cheat Sheet**
 
+
+1. **Fixed-Size Window** → Window size = constant `k`
+
+   * Common operations inside the window:
+
+     * **Sum / Average** → numeric problems
+     * **Frequency / Count** → letters, characters, or numbers
+     * **Max / Min** → can use deque for efficiency
+
+2. **Dynamic-Size (Variable) Window** → Window expands or shrinks based on a **condition**
+
+   * Common operations:
+
+     * **Max / Min** → find longest/shortest satisfying condition
+     * **Frequency / Count** → distinct characters, repeating elements
+     * **Sum / Product** → sliding sum/product with target constraints
+
+---
+
+✅ **Memory Trick:**
+
+> “Fixed → just slide & compute, Dynamic → expand/shrink & maintain condition”
+
+---
+
+
+## **Detailed explanation:**
+
 ## **1️⃣ Fixed-Size Window**
 
 **Pattern:** Slide a window of size `k` across array/string.
@@ -138,4 +166,6 @@ Window "abc" → All unique ✅
 > “Fixed = Sum/Max, Dynamic = Condition, Map = Frequency, Deque = Extremes”
 
 ---
+
+
 
