@@ -63,6 +63,10 @@ class Solution:
         return max_vowels_count
 
 
+
+
+# Total time complexity: O(n)
+
 # Hints:
 # max count of vowels in a given window size ever possible is  = k(window size) --> This can help with an early exit.
 # Each time window slides, one character is leaving the window on left side and the new character is entering the window on right side --> this can help to reduce the recomputation of vowels count in the current window
