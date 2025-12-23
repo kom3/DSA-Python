@@ -277,6 +277,9 @@ Do I care about order?
 * Always ask: **Does order matter here?**
 
 ---
+## Mathematical bridge:
+
+
 ![alt text](image.png)
 
 ![alt text](image-1.png)
@@ -284,7 +287,7 @@ Do I care about order?
 
 ---
 
-### **Permutation** vs **Anagram**: 
+## **Permutation** vs **Anagram**: 
 
 Yes, an **anagram is very closely related to a permutation**, but there’s a subtle difference depending on context:
 
