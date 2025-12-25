@@ -4,6 +4,7 @@
 - sliding window
   - 2 Types(fixed size window + Variable size window)
   - Patterns (f/v window + hash map/count/sum/avg/frequency map)
+- Prefix Sum
 - two pointer
 - dynamic programming - memorization & tabulation (need more practice)
 - sorting (need to memorize)
