@@ -57,7 +57,7 @@ class Solution:
 
         total_sum = sum(cardPoints)
 
-        # Window size represents cards we do NOT take
+        # Window size represents cards we do NOT take (cards left in the middle)
         window_size = n - k
 
         window_sum = 0              # current window sum
