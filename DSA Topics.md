@@ -2,8 +2,8 @@
 
 __1. Array & Strings__
 - sliding window
-  - 2 Types(fixed size window + Variable size window + Bit manipulation)
-  - Patterns (f/v window + hash map/count/sum/avg/frequency map + Bit manipulation)
+  - 2 Types - Fixed size window & Variable size window
+  - Patterns (f/v window + hash map/count/sum/avg/frequency map + Bit manipulation + Prefix sum)
 - Two pointer
 - Prefix Sum
 - Dynamic programming:
