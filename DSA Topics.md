@@ -6,7 +6,9 @@ __1. Array & Strings__
   - Patterns (f/v window + hash map/count/sum/avg/frequency map + Bit manipulation)
 - Two pointer
 - Prefix Sum
-- Dynamic programming - memorization & tabulation (need more practice)
+- Dynamic programming:
+  - Memoization: A top-down dynamic programming approach where you use recursion and store results of subproblems to avoid recomputation.
+  - Tabulation: A bottom-up dynamic programming approach where you iteratively build solutions from smaller subproblems, usually using loops.
 - Sorting (need to memorize)
   buble, selection, insertion, quick, count, radix, merge, heap
 - Searching, linear & binary search
