@@ -5,9 +5,9 @@ __1. Array & Strings__
   - 2 Types:
     1. Fixed size window
     2. Variable size window
-  - Patterns (fixed/variable window + hash map/count/sum/avg/frequency map + Bit manipulation + Prefix sum)
-- Two pointer
+  - Patterns (fixed/variable window + hash map/count/sum/avg/frequency map + Bit manipulation)
 - Prefix Sum
+- Two pointer
 - Dynamic programming:
   - Memoization: A top-down dynamic programming approach where you use recursion and store results of subproblems to avoid recomputation.
   - Tabulation: A bottom-up dynamic programming approach where you iteratively build solutions from smaller subproblems, usually using loops.
