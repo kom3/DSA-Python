@@ -37,3 +37,54 @@
 
 
 
+# Key Idea
+# Instead of choosing k cards from the ends,
+# find the minimum sum subarray of length n - k (cards left in the middle).
+
+
+
+
+from typing import List
+
+class Solution:
+    def maxScore(self, cardPoints: List[int], k: int) -> int:
+        
+        n = len(cardPoints)
+        
+        # If we take all cards, no need to slide a window
+        if k == n:
+            return sum(cardPoints)
+
+        total_sum = sum(cardPoints)
+
+        # Window size represents cards we do NOT take
+        window_size = n - k
+
+        window_sum = 0              # current window sum
+        min_window_sum = float("inf")  # track minimum leftover sum
+
+        # 'i' acts as the right pointer of the window
+        for i in range(n):
+            # Expand the window by adding the right element
+            window_sum += cardPoints[i]
+
+            # Once we have exactly 'window_size' elements,
+            # start processing the window
+            if i >= window_size - 1:
+                # Update minimum sum of leftover cards
+                min_window_sum = min(min_window_sum, window_sum)
+
+                # Shrink window from the left for next iteration
+                window_sum -= cardPoints[i - (window_size - 1)]
+
+        # Maximum score = total points - minimum leftover points
+        return total_sum - min_window_sum
+
+
+# ⏱️ Complexity
+# Time: O(n)
+# Space: O(1)
+
+
+# One-Line Interview Explanation
+# “I find the minimum sum subarray of length n - k using a fixed sliding window and subtract it from the total sum.”
