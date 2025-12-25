@@ -1,6 +1,6 @@
 # Important topics in DSA
 
-1. Array & Strings
+__1. Array & Strings__
 - sliding window
   - 2 Types(fixed size window + Variable size window + Bit manipulation)
   - Patterns (f/v window + hash map/count/sum/avg/frequency map + Bit manipulation)
@@ -13,17 +13,17 @@
 - Problems related to combinations
 - Recursion, include and exclude nesting 
 
-2. Stack
+__2. Stack__
 - Min stack
 - Infix to postfix
 - Basic math operator related problems
 
-3. Queue,  
+__3. Queue,__  
 - Circuler Q
 - DeQueue
 - Priority queue 
 
-4. Linked List
+__4. Linked List__
 - Singly
 - Doubly
 - Circular singly
@@ -31,9 +31,9 @@
 - Floyd's Cycle-Finding
 - Stack & Q implementation
 
-5. Recursion
+__5. Recursion__
 
-6. Trees 
+__6. Trees__
 - Binary trees
 - Traversing binary tree
 - Huffman's tree
@@ -42,7 +42,7 @@
 - Threaded binary tree to avoid recursion most of time
 - LCA(lowest common ancestor)
 
-7. Graphs
+__7. Graphs__
 - Transitive closure of directed graph
 - DFS
 - BFS
@@ -57,18 +57,18 @@
 - Ford-Fulkerson algorithm (maximum flow between two points)
 - Edmonds-Karp algorithm (maximum flow between two points)
 
-8. Tries
+__8. Tries__
 - Trie (insertion, search, auto-completion, deletion)
 - Ternary search tree (TST)
 
 
-9. Heap & priority queue
+__9. Heap & priority queue__
 
 
-10. Backtracking
+__10. Backtracking__
 
 
-11. Advance tree
+__11. Advance tree__
 - AVL Trees (self balancing tree O(logn) insert,del,update)
 - Red black tree  (self-balancing tree for frequent insertion and less search)
 - Splay tree: (caching purpose) will be used as similarly to LinkedList & Array to store data to efficient and fast access the frequently used values
