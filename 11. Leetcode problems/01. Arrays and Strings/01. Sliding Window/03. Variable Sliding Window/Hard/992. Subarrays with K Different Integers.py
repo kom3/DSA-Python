@@ -75,11 +75,15 @@ class Solution:
     # Exactly K distinct characters
     # Exactly K unique elements in subarray
 
+# ❝If the problem says EXACTLY K, think At Most K − At Most (K − 1)❞
+
+
+
+
 
 
 
 # This can be solved using two pointer technique as well, but for interviews perfer the above sliding window solution
-
 
 from typing import List
 
