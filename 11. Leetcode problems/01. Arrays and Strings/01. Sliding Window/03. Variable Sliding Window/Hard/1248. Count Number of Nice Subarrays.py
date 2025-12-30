@@ -70,3 +70,14 @@ class Solution:
         # (subarrays with at most k odds) -
         # (subarrays with at most k-1 odds)
         return atMostK(nums, k) - atMostK(nums, k - 1)
+    
+
+
+
+
+# | Complexity | Value |
+# | ---------- | ----- |
+# | Time       | O(n)  |
+# | Space      | O(1)  |
+
+

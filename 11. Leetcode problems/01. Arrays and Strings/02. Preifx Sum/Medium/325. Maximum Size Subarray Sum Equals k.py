@@ -34,3 +34,50 @@
 
 
 
+from collections import defaultdict
+from typing import List
+
+class Solution:
+    def numberOfSubarrays(self, nums: List[int], k: int) -> int:
+        """
+        Count the number of "nice" subarrays with exactly k odd numbers.
+        """
+        # Initialize result
+        total_nice_array_count = 0
+        
+        # Map to store frequency of prefix odd counts
+        odd_count_map = defaultdict(int)
+        
+        # There is 1 way to have 0 odd numbers before starting
+        odd_count_map[0] = 1
+        
+        # Current count of odd numbers seen so far
+        odd_count = 0
+        
+        # Traverse the array
+        for num in nums:
+            # Increment odd_count if current number is odd
+            odd_count += num % 2
+            
+            # If there was a prefix with (odd_count - k) odd numbers,
+            # it forms a nice subarray ending at current index
+            total_nice_array_count += odd_count_map[odd_count - k]
+            
+            # Update the map with current odd_count
+            odd_count_map[odd_count] += 1
+        
+        return total_nice_array_count
+
+
+
+
+
+# | Complexity | Value |
+# | ---------- | ----- |
+# | Time       | O(n)  |
+# | Space      | O(n)  |
+
+
+
+
+
