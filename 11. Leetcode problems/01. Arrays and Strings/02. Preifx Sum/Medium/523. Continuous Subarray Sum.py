@@ -39,3 +39,53 @@
 
 
 
+from typing import List
+
+class Solution:
+    def checkSubarraySum(self, nums: List[int], k: int) -> bool:
+        """
+        Returns True if the array has a continuous subarray of size at least 2
+        whose sum is a multiple of k.
+        """
+        
+        # Map to store first occurrence of each remainder
+        # Initialize with 0 mapped to -1 to handle subarrays starting at index 0
+        remainder_index_map = {0: -1}
+        
+        prefix_sum = 0  # Running sum of elements
+        
+        for i, num in enumerate(nums):
+            prefix_sum += num  # Add current number to running sum
+            
+            # Only take modulo if k is not zero
+            if k != 0:
+                prefix_sum %= k
+            
+            # Check if this remainder has been seen before
+            if prefix_sum in remainder_index_map:
+                # Subarray length = current index - previous index of same remainder
+                if i - remainder_index_map[prefix_sum] >= 2:
+                    return True  # Found valid subarray
+            else:
+                # Store the first occurrence of this remainder
+                remainder_index_map[prefix_sum] = i
+        
+        return False  # No valid subarray found
+
+
+
+
+
+# ✅ Key Points in the Code
+#     Prefix sum modulo k: Helps reduce the problem to checking if two prefix sums have the same remainder.
+#     Map stores first occurrence: Ensures we always get the longest possible subarray starting after that index.
+#     Length check >= 2: Ensures subarrays are at least size 2.
+#     Handle k == 0: Avoid division/modulo by zero errors.
+
+
+
+
+# | Complexity | Value        |
+# | ---------- | ------------ |
+# | Time       | O(n)         |
+# | Space      | O(min(n, k)) |
