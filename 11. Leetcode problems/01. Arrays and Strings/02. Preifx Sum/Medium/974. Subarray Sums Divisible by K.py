@@ -62,3 +62,15 @@ class Solution:
 
 
 
+# | Resource  | Complexity | Reason                                                                     |
+# | --------- | ---------- | -------------------------------------------------------------------------- |
+# | **Time**  | O(n)       | Single pass through the array + O(1) hash lookups/updates for each element |
+# | **Space** | O(k)       | At most k distinct remainders stored in `remainder_freq`                   |
+
+# Key Notes for Revision
+# Core pattern: prefix[i] - prefix[j] ≡ 0 mod k → prefix[i] % k == prefix[j] % k
+# Normalization of remainder:
+#     Python: optional for positive k (because % always returns 0..k-1)
+#     C/C++/Java: necessary, because modulo may return negative numbers
+
+
