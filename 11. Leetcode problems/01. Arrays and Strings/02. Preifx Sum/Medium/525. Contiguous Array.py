@@ -25,3 +25,60 @@
 
 # 1 <= nums.length <= 105
 # nums[i] is either 0 or 1.
+
+
+
+
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        # max_len stores the length k of the longest valid subarray
+        max_len = 0
+
+        # prefix_sum:
+        #   +1 for every 1
+        #   -1 for every 0
+        prefix_sum = 0
+
+        # seen[prefix_sum] = earliest index j where this prefix_sum occurred
+        # Initialize with prefix_sum = 0 at index -1
+        # (helps handle subarrays starting from index 0)
+        seen = {0: -1}
+
+        for i, num in enumerate(nums):
+            # Build prefix sum
+            if num == 0:
+                prefix_sum -= 1
+            else:
+                prefix_sum += 1
+
+            # ---- Key Formula Reference ----
+            # For a subarray (j + 1) to i:
+            #   prefix_sum[i] - prefix_sum[j] = 0
+            # ⇒ prefix_sum[i] = prefix_sum[j]
+            #
+            # Length of subarray:
+            #   k = i - j
+            #
+            # This matches the pattern:
+            #   i - j = k
+            # --------------------------------
+
+            if prefix_sum in seen:
+                # j = seen[prefix_sum]
+                # k = i - j
+                max_len = max(max_len, i - seen[prefix_sum])
+            else:
+                # Store the first (earliest) index j only
+                # to maximize i - j
+                seen[prefix_sum] = i
+
+        return max_len
+
+
+
+
+# | Resource | Complexity | Explanation                                    |
+# | -------- | ---------- | ---------------------------------------------- |
+# | Time     | O(n)       | Single pass + O(1) dict operations per element |
+# | Space    | O(n)       | Dictionary stores up to n+1 prefix sums        |
+
