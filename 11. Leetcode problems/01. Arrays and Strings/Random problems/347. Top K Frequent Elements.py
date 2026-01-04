@@ -56,7 +56,7 @@ class Solution:
         # Step 3: Collect top k frequent numbers
         res = []
         # Start from the bucket with highest frequency
-        for i in range(len(buckets) - 1, 0, -1):
+        for i in range(len(buckets) - 1, -1, -1):
             for num in buckets[i]:
                 res.append(num)  # add number to result
                 if len(res) == k:  # stop once we have k elements
