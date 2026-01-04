@@ -76,3 +76,34 @@ class Solution:
 
 
 
+from collections import Counter
+from heapq import heappush, heappop
+from typing import List
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        # Step 1: Count the frequency of each number
+        freq = Counter(nums)  # Counter automatically creates a frequency map
+
+        # Step 2: Build a max-heap using negative frequencies
+        # Heap elements are tuples: (-frequency, number)
+        # Python’s heapq is a min-heap by default, We want a max-heap for “top K frequent”, Trick: Store negative frequency, Largest frequency → most negative → becomes “smallest” for min-heap
+        max_heap = []
+        for num, count in freq.items():
+            heappush(max_heap, (-count, num))
+
+        # Step 3: Extract top k elements from the heap
+        res = []
+        for _ in range(k):
+            res.append(heappop(max_heap)[1])  # get the number from the tuple
+
+        return res
+
+
+
+# ✅ Key Points
+    # Counting frequencies → O(n)
+    # Building heap → O(n) for n unique elements
+    # Extracting top k → O(k log n)
+    # Overall complexity → O(n + k log n)
+    # Space complexity → O(n)
