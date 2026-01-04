@@ -53,6 +53,7 @@ class Solution:
 # Space: O(k) where k is the number of distinct Unicode characters
 
 
+# Explanation for a follow up question:
 # What would NOT work for Unicode
 # ❌ Fixed-size array approach
 # count = [0] * 26  # only works for lowercase English letters
