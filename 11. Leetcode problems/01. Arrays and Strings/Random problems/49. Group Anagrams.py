@@ -68,3 +68,36 @@ class Solution:
 # Time: O(n * k)
 # Space: O(n * k)
 
+
+
+
+
+from typing import List
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # Dictionary to store groups of anagrams
+        # Key: sorted version of the string
+        # Value: list of strings that are anagrams of each other
+        anagram_groups = {}
+
+        for s in strs:
+            # Sort the string to create a key
+            # All anagrams will have the same sorted string
+            key = "".join(sorted(s))
+
+            # Append the original string to its corresponding group
+            # If the key doesn't exist, initialize with an empty list
+            anagram_groups.setdefault(key, []).append(s)
+
+        # Return all groups of anagrams as a list of lists
+        return list(anagram_groups.values())
+
+
+
+# Time Complexity
+# Sorting each string of length k: O(k log k)
+# Doing this for n strings: O(n * k log k)
+
+# Space Complexity
+# Dictionary stores all strings and keys: O(n * k)
