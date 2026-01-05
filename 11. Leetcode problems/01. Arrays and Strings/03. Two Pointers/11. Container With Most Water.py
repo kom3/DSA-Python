@@ -26,49 +26,39 @@
 
 
 class Solution:
-    def trap(self, height: List[int]) -> int:
-        # Two pointers
-        left, right = 0, len(height) - 1
+    def maxArea(self, heights: List[int]) -> int:
+        # Two pointers at both ends
+        left, right = 0, len(heights) - 1
 
-        # Maximum height seen so far from each side
-        left_max = 0
-        right_max = 0
+        # Maximum area found so far
+        max_area = 0
 
-        # Total trapped water
-        total = 0
-
-        # Process until pointers meet
+        # Continue until pointers meet
         while left < right:
-            # The smaller side determines the water level
-            if height[left] < height[right]:
-                # Update max on the left
-                left_max = max(left_max, height[left])
+            # Width between the two lines
+            width = right - left
 
-                # Water trapped at current left index
-                total += left_max - height[left]
+            # Height is limited by the shorter line
+            height = min(heights[left], heights[right])
 
-                # Move left pointer
+            # Area formed by current pair
+            max_area = max(max_area, width * height)
+
+            # Move the pointer at the shorter line
+            if heights[left] < heights[right]:
                 left += 1
             else:
-                # Update max on the right
-                right_max = max(right_max, height[right])
-
-                # Water trapped at current right index
-                total += right_max - height[right]
-
-                # Move right pointer
                 right -= 1
 
-        return total
+        return max_area
 
 
 
+# One-line revision intuition
 
+# Area is limited by the shorter line, so move the pointer at the smaller height.
 
-# One-line intuition (great for revision)
-# Always move the pointer with the smaller height, because that side limits how much water can be trapped.
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 
-# Complexity
-# Time: O(n)
-# Space: O(1)
 

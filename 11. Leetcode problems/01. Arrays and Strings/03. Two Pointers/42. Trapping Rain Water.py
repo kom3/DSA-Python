@@ -18,3 +18,49 @@
 # 0 <= height[i] <= 105
 
 
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        # Two pointers
+        left, right = 0, len(height) - 1
+
+        # Maximum height seen so far from each side
+        left_max = 0
+        right_max = 0
+
+        # Total trapped water
+        total = 0
+
+        # Process until pointers meet
+        while left < right:
+            # The smaller side determines the water level
+            if height[left] < height[right]:
+                # Update max on the left
+                left_max = max(left_max, height[left])
+
+                # Water trapped at current left index
+                total += left_max - height[left]
+
+                # Move left pointer
+                left += 1
+            else:
+                # Update max on the right
+                right_max = max(right_max, height[right])
+
+                # Water trapped at current right index
+                total += right_max - height[right]
+
+                # Move right pointer
+                right -= 1
+
+        return total
+
+
+
+
+
+# One-line intuition (great for revision)
+# Always move the pointer with the smaller height, because that side limits how much water can be trapped.
+
+# Complexity
+# Time: O(n)
+# Space: O(1)
