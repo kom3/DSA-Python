@@ -60,3 +60,26 @@ class Solution:
 
         # Return the length of the longest valid substring
         return max_len
+
+
+
+
+# Solution 2
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        seen = set()
+        max_len = 0
+        left = 0
+
+        for right in range(len(s)):
+            rch = s[right]
+
+            while rch in seen:
+                seen.remove(s[left])
+                left += 1
+
+            seen.add(rch)
+            max_len = max(max_len, right - left + 1)
+
+        return max_len
