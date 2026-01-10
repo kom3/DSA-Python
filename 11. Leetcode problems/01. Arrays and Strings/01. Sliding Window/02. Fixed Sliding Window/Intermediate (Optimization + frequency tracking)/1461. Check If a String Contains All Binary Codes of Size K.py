@@ -30,7 +30,7 @@
 
 
 
-# Stright away we think that the problem is asking to compare all the binary codes(subsequences) of size k with the available sub strings of sizek
+# Stright away we think that the problem is asking to compare all the binary codes(subsequences) of size k with the available sub strings of size k
 # But the fact is we can come to the conclusion of whether all the possible binary codes(subsequences) of size k present as substrings just by checking the count without doing the actual content comparision(comparing all combinations of binary codes with available substrings).
 # We know there are two possible numbers in binary, so the max possible combinations can be calculated as 2^k and this should match the number of unique substrings of length k.
 
@@ -88,7 +88,7 @@ print(sobj.hasAllCodes(s, k))
 # Solution 2
     # Sliding Window Pattern Summary
     # Initialize: 
-        # num = 0,  later it acts as a container to store the binary nums from of the given input string
+        # num = 0,  later it acts as a container to store the binary nums from the given input string
         # mask = (1 << k) - 1, this is a formula to calculate the mask(memorize), it can also be written as (2^k -1), so 2^k is 1 << k
         # unique_set = set(), this to store the substrings of binary nums of given size "k"
     
